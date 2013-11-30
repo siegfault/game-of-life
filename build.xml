@@ -1,0 +1,20 @@
+<project name="GameOfLife" default="compile" basedir=".">
+  <!-- set global properties for this build -->
+  <property name="src" location="."/>
+  <property name="build" location="."/>
+  <property name="dist"  location="."/>
+
+  <target name="compile" description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  <target name="run" description="run the file " depends="compile" >
+    <java classname="GameOfLifeText" classpath="." />
+  </target>
+
+  <target name="clean" description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete file="*.class"/>
+  </target>
+</project>
